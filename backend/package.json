@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "flask": "^0.2.10",
+    "flask-cors": "^0.0.1",
+    "openai": "^5.20.2",
+    "requests": "^0.3.0"
+  }
+}
