@@ -12,7 +12,7 @@ import os
 
 app = Flask(__name__)
 CORS(app)
-CORS(app, resources={r"/*": {"origins": "http://127.0.0.1:5501"}})
+CORS(app, resources={r"/*": {"origins": "https://newswave-3.onrender.com"}})
 
 
 
