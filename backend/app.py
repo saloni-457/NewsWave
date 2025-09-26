@@ -26,6 +26,9 @@ genai.configure(api_key=GEMINI_API_KEY)
 # response = model.generate_content(prompt)
 
 
+@app.route("/")
+def home():
+    return "✅ NewsWave backend is running on Render!"
 
 
 
