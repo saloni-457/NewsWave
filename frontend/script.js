@@ -1,24 +1,37 @@
+
+// =================== CONFIG ===================
+const BASE_URL =
+    window.location.hostname === "localhost"
+        ? "http://127.0.0.1:5000"                         // Local Flask server
+        : "https://newswave-3.onrender.com";              // Deployed backend
+
+const DEFAULT_CATEGORY = "general";
+
 // =================== DOM LOADED ===================
-document.addEventListener("DOMContentLoaded", function () {
-    const apiUrl = "https://newsapi.org/v2/top-headlines";
-    const defaultCategory = "general";
+document.addEventListener("DOMContentLoaded", () => {
     const newsContent = document.getElementById("news-content");
 
-    const BASE_URL =
-        window.location.hostname === "localhost"
-            ? "http://127.0.0.1:5000"                         // Local Flask server
-            : "https://newswave-3.onrender.com";
-
-    // Function to fetch news
-    function fetchNews(query = "India") {
-        return fetch(`${BASE_URL}/get-news?query=${query}`)
-            .then(res => res.json())
-            .then(data => data.articles);
+    // ========== Fetch News ==========
+    async function fetchNews(query = "India") {
+        try {
+            const res = await fetch(`${BASE_URL}/get-news?query=${query}`);
+            if (!res.ok) throw new Error("Failed to fetch news");
+            const data = await res.json();
+            return data.articles || [];
+        } catch (err) {
+            console.error("Error fetching news:", err);
+            return [];
+        }
     }
 
-    // Displaying news
+    // ========== Display News ==========
     function displayNews(articles) {
         newsContent.innerHTML = "";
+        if (!articles.length) {
+            newsContent.innerHTML = `<p class="error">No news found. Try again later.</p>`;
+            return;
+        }
+
         articles.forEach(article => {
             const articleElement = document.createElement("article");
             articleElement.innerHTML = `
@@ -26,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <img src="${article.urlToImage || 'images/logo.png'}" alt="${article.title}">
                 </div>
                 <div class="article-details">
-                    <h2>${article.title}</h2>
+                    <h2>${article.title || "Untitled"}</h2>
                     <p>${article.description || ""}</p>
                     <a href="${article.url}" target="_blank">Read more</a>
                 </div>
@@ -36,18 +49,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Initial load
-    fetchNews(defaultCategory)
-        .then(displayNews)
-        .catch(err => console.error("Error fetching news:", err));
+    fetchNews(DEFAULT_CATEGORY).then(displayNews);
 
     // Category click
     document.querySelectorAll("nav a").forEach(link => {
-        link.addEventListener("click", function (event) {
+        link.addEventListener("click", async (event) => {
             event.preventDefault();
-            const category = this.getAttribute("id").replace("category-", "");
-            fetchNews(category).then(displayNews);
+            const category = link.id.replace("category-", "");
+            const articles = await fetchNews(category);
+            displayNews(articles);
 
-            // it is Optional here: auto-hide nav on small screens
+            // Auto-hide nav on small screens
             if (window.innerWidth <= 768) {
                 document.querySelector("nav").classList.remove("open");
             }
@@ -62,27 +74,13 @@ const chatbox = document.querySelector(".chatbox");
 const userInput = document.querySelector(".chat-input textarea");
 const sendButton = document.getElementById("send-btn");
 
-document.addEventListener("DOMContentLoaded", () => {
-    sendButton.addEventListener("click", handleChat);
-
-    // Enter key for send
-    userInput.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" && !e.shiftKey) {
-            e.preventDefault();
-            handleChat();
-        }
-    });
-});
-
 // Handling chats
-const handleChat = () => {
+async function handleChat() {
     const userMessage = userInput.value.trim();
     if (!userMessage) return;
 
-    // User bubbles
-    const userChat = createChatElement(userMessage, "user");
-    chatbox.appendChild(userChat);
-
+    // User bubble
+    chatbox.appendChild(createChatElement(userMessage, "user"));
     userInput.value = "";
     chatbox.scrollTop = chatbox.scrollHeight;
 
@@ -91,11 +89,11 @@ const handleChat = () => {
     chatbox.appendChild(botChat);
     chatbox.scrollTop = chatbox.scrollHeight;
 
-    generateResponse(botChat, userMessage);
-};
+    await generateResponse(botChat, userMessage);
+}
 
-// =================== Chat element ===================
-const createChatElement = (text, sender) => {
+// Chat element
+function createChatElement(text, sender) {
     const chatDiv = document.createElement("div");
     chatDiv.classList.add("chat", sender);
 
@@ -104,32 +102,31 @@ const createChatElement = (text, sender) => {
     chatDiv.appendChild(message);
 
     return chatDiv;
-};
+}
 
-// =================== Generating response ===================
-const generateResponse = (chatElement, userMessage) => {
+// Generating response
+async function generateResponse(chatElement, userMessage) {
     const messageElement = chatElement.querySelector("p");
 
-    fetch(`${BASE_URL}/summarize`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: userMessage })
-    })
-        .then(res => {
-            if (!res.ok) throw new Error("Server error");
-            return res.json();
-        })
-        .then(data => {
-            const response = data.summary || "No summary found.";
-            messageElement.textContent = response;
-            chatbox.scrollTop = chatbox.scrollHeight;
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            messageElement.classList.add("error");
-            messageElement.textContent = "Oops! Something went wrong. Please try again.";
+    try {
+        const res = await fetch(`${BASE_URL}/summarize`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ text: userMessage })
         });
-};
+
+        if (!res.ok) throw new Error("Server error");
+        const data = await res.json();
+
+        messageElement.textContent = data.summary || "No summary found.";
+    } catch (error) {
+        console.error("Error:", error);
+        messageElement.classList.add("error");
+        messageElement.textContent = "Oops! Something went wrong. Please try again.";
+    } finally {
+        chatbox.scrollTop = chatbox.scrollHeight;
+    }
+}
 
 // =================== DATE & TIME ===================
 function updateTime() {
@@ -144,8 +141,17 @@ function updateTime() {
 setInterval(updateTime, 1000);
 updateTime();
 
+// =================== EVENT LISTENERS ===================
+document.addEventListener("DOMContentLoaded", () => {
+    sendButton.addEventListener("click", handleChat);
+    userInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            handleChat();
+        }
+    });
+});
+
 closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
-
-
 

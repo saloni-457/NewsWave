@@ -3,21 +3,18 @@ from flask_cors import CORS
 import requests
 import google.generativeai as genai
 from dotenv import load_dotenv
-load_dotenv()
-import traceback
+import os, traceback
 
-import os
+load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
 
 CORS(app, resources={
     r"/*": {
         "origins": [
             "http://127.0.0.1:5501",   # local frontend
             "http://localhost:3000",   # if using React dev server
-            "https://dailynews-on-newswave.netlify.app",  # for Netlify frontend
-            "https://newswave-3.onrender.com"  # here Rendering backend itself
+            "https://dailynews-on-newswave.netlify.app"  # for Netlify frontend
         ]
     }
 })
