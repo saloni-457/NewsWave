@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const BASE_URL =
         window.location.hostname === "localhost"
-            ? "http://127.0.0.1:5000" // Local Flask server
+            ? "http://127.0.0.1:5000"                         // Local Flask server
             : "https://newswave-3.onrender.com";
 
     // Function to fetch news
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => data.articles);
     }
 
-    // Display news
+    // Displaying news
     function displayNews(articles) {
         newsContent.innerHTML = "";
         articles.forEach(article => {
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const category = this.getAttribute("id").replace("category-", "");
             fetchNews(category).then(displayNews);
 
-            // Optional: auto-hide nav on small screens
+            // it is Optional here: auto-hide nav on small screens
             if (window.innerWidth <= 768) {
                 document.querySelector("nav").classList.remove("open");
             }
@@ -74,12 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Handle chat
+// Handling chats
 const handleChat = () => {
     const userMessage = userInput.value.trim();
     if (!userMessage) return;
 
-    // User bubble
+    // User bubbles
     const userChat = createChatElement(userMessage, "user");
     chatbox.appendChild(userChat);
 
@@ -91,11 +91,10 @@ const handleChat = () => {
     chatbox.appendChild(botChat);
     chatbox.scrollTop = chatbox.scrollHeight;
 
-    // Generate response
     generateResponse(botChat, userMessage);
 };
 
-// Chat element
+// =================== Chat element ===================
 const createChatElement = (text, sender) => {
     const chatDiv = document.createElement("div");
     chatDiv.classList.add("chat", sender);
@@ -107,7 +106,7 @@ const createChatElement = (text, sender) => {
     return chatDiv;
 };
 
-// Generate response
+// =================== Generating response ===================
 const generateResponse = (chatElement, userMessage) => {
     const messageElement = chatElement.querySelector("p");
 

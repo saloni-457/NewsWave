@@ -1,11 +1,14 @@
-/* Import Google font - Poppins */
+/* Importing Google font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 body {
-  margin: 0px;
+  margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
+
   overflow-x: hidden;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -59,30 +62,42 @@ header {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .social-media {
-  height: 80px;
-  width: 300px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  margin-right: -45px;
+  justify-content: center;
+  gap: 20px;
+  height: auto;
+  width: auto;
+  margin: 0;
 }
+
 .social-media a {
   color: white;
   text-decoration: none;
   font-size: 20px;
 }
+
 .social-media a:hover {
   color: #ddd;
 }
 
+
 /* ---------------- Navbar ---------------- */
+
 nav {
   width: 100%;
   background-color: #444;
   padding: 10px 0;
   transition: max-height 0.3s ease-out;
   overflow: hidden;
+
+  /* Making navbar sticky below the header */
+
+  position: sticky;
+  top: 110px;          /* having same height as header */
+  z-index: 999;
 }
+
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -125,9 +140,7 @@ nav ul li a:hover {
 }
 
 /* ---------------- Main ---------------- */
-main {
-  padding: 18px;
-}
+
 article {
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -347,45 +360,108 @@ body.show-chatbot .chatbot {
   }
 }
 
+/*  Responsive header layout for mobile (TOI-style) */
+
+
 @media (max-width: 768px) {
+
   header {
     flex-wrap: wrap;
     height: auto;
     padding: 10px;
     text-align: center;
   }
-  .date-time {
-    margin: 5px 0;
-    width: 100%;
-    text-align: center;
+
+  .header-flex-wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
+
+  .date-time {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 14px;
+    order: 1;
+  }
+
+  .logo-and-title {
+    order: 2;
+    margin: 5px 0;
+  }
+
   .logo-and-title-container {
+    justify-content: center;
     margin: 0;
   }
+
+  .tagline {
+    margin: 2px 0 5px;
+  }
+
   .social-media.desktop-only {
     display: none;
   }
+
   .menu-toggle {
     display: block;
   }
+
+
+  /* Social media alignment */
+
+  .social-media {
+    display: flex;
+    gap: 15px;
+    margin-left: 10px;
+  }
+  
+    /* Navbar container as row */
+
   nav {
-    max-height: 0;
-  }
-  nav.active {
-    max-height: 500px; /* expand */
-  }
-  nav ul {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px 0;
   }
+
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;        /* items are wrapped here */
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;     /* removed scroll bar */
+    white-space: normal;
+  }
+
   nav ul li {
-    margin: 15px 0;
+    margin: 5px 10px;            /* reducing margin for mobile */
   }
+
+  nav ul li a {
+    font-size: 14px;           /* slightly smaller text */
+  }
+
+  /* Navbar social icons */
+
+  nav .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 8px;   /* gaps in between categories  */
+  }
+
+  nav.active {
+    max-height: 500px; /* keeping dropdown expand if toggle is need  */
+  }
+
   .mobile-only {
     display: flex;
     justify-content: center;
     padding: 10px 0;
   }
+
   article {
     display: flex;
     flex-direction: column;
@@ -429,6 +505,25 @@ body.show-chatbot .chatbot {
     height: 65vh;
     right: 2.5%;
   }
+}
+
+@media (min-width: 769px) {
+  nav {
+    max-height: none;
+    overflow: visible;
+    padding: 10px 0;
+    display: block;
+  }
+}
+
+
+
+.header-flex-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 

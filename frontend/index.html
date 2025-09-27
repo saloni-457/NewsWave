@@ -14,29 +14,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+
+  <!-- UPDATED HEADER STRUCTURE -->
+<header>
+  <div class="header-flex-wrapper">
+    <!-- DateTime -->
     <div class="date-time" id="dateTime"></div>
-    
+
+    <!-- Site Title and Logo -->
     <div class="logo-and-title">
-        <div class="logo-and-title-container">
-          <img src="images/logo.png" alt="NewsWave Logo" class="logo">
-          <div class="title">NewsWave</div>
-        </div>
-        <div class="tagline">Your Daily Dose of News</div>
+      <div class="logo-and-title-container">
+        <img src="images/logo.png" alt="NewsWave Logo" class="logo">
+        <div class="title">NewsWave</div>
+      </div>
+      <div class="tagline">Your Daily Dose of News</div>
     </div>
 
-    <!-- Mobile hamburger -->
-    <div class="menu-toggle" id="menuToggle">
-        <span class="material-symbols-outlined">menu</span>
-    </div>
-
+    <!-- Socials for desktop -->
     <div class="social-media desktop-only">
-        <a href="https://www.facebook.com" target="_blank"><span class="fab fa-facebook-f"></span></a>
-        <a href="https://www.instagram.com" target="_blank"><span class="fab fa-instagram"></span></a>
-        <a href="https://twitter.com" target="_blank"><span class="fab fa-twitter"></span></a>
-        <a href="https://www.youtube.com" target="_blank"><span class="fab fa-youtube"></span></a>
+      <a href="https://www.facebook.com" target="_blank"><span class="fab fa-facebook-f"></span></a>
+      <a href="https://www.instagram.com" target="_blank"><span class="fab fa-instagram"></span></a>
+      <a href="https://twitter.com" target="_blank"><span class="fab fa-twitter"></span></a>
+      <a href="https://www.youtube.com" target="_blank"><span class="fab fa-youtube"></span></a>
     </div>
-  </header>
+  </div>
+
+  <!-- Mobile hamburger -->
+  <div class="menu-toggle" id="menuToggle">
+    <span class="material-symbols-outlined">menu</span>
+  </div>
+</header>
+<!-- ✅ END HEADER UPDATE -->
 
   <!-- Navbar -->
   <nav id="navbar">
@@ -106,7 +114,9 @@
     </div>
   </footer>
 
+
   <script src="script.js"></script>
+  
 </body>
 </html>
 

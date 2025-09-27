@@ -10,17 +10,14 @@ import os
 
 app = Flask(__name__)
 CORS(app)
-# CORS(app, resources={r"/*": {"origins": "https://newswave-3.onrender.com"}})
-
-# CORS(app, resources={r"/*": {"origins": ["https://newswave-3.onrender.com", "https://dailynews-on-newswave.netlify.app" ]}})
 
 CORS(app, resources={
     r"/*": {
         "origins": [
             "http://127.0.0.1:5501",   # local frontend
-            "http://localhost:3000",   # if you use React dev server
-            "https://dailynews-on-newswave.netlify.app",  # Netlify frontend
-            "https://newswave-3.onrender.com"  # Render backend itself
+            "http://localhost:3000",   # if using React dev server
+            "https://dailynews-on-newswave.netlify.app",  # for Netlify frontend
+            "https://newswave-3.onrender.com"  # here Rendering backend itself
         ]
     }
 })
@@ -32,10 +29,6 @@ GEMINI_API_KEY = os.getenv("GEMINI_GOOGLE_API_KEY")
 print("Loaded Gemini API key:", GEMINI_API_KEY)
 
 genai.configure(api_key=GEMINI_API_KEY)  
-
-# model = genai.GenerativeModel("gemini-pro")
-# response = model.generate_content(prompt)
-
 
 @app.route("/")
 def home():
@@ -62,7 +55,6 @@ def summarize():
         if not prompt:
             return jsonify({"error": "Missing 'text' field"}), 400
 
-        # model = genai.GenerativeModel("gemini-pro")
 
         model = genai.GenerativeModel(
             model_name="gemini-pro",
@@ -76,7 +68,7 @@ def summarize():
 
         response = model.generate_content(prompt)
 
-        print("🟢 Gemini raw response:", response)  # not just .text
+        print("🟢 Gemini raw response:", response)  
         print("✅ Gemini response text:", response.text)
         return jsonify({"summary": response.text})
 
