@@ -5,12 +5,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const defaultCategory = "general";
     const newsContent = document.getElementById("news-content");
 
+    // const BASE_URL = "https://newswave-3.onrender.com";
+    const BASE_URL =
+  window.location.hostname === "localhost"
+    ? "http://127.0.0.1:5000" // Local Flask server
+    : "https://newswave-3.onrender.com";
+
     // Function to fetch news from local Flask server
     function fetchNews(query = "India") {
-        return fetch(`http://localhost:5000/get-news?query=${query}`)
+        // return fetch(`http://localhost:5000/get-news?query=${query}`)
+        return fetch(`${BASE_URL}/get-news?query=${query}`)
             .then(res => res.json())
             .then(data => data.articles);
     }
+
+
 
     // Function to display news articles
     function displayNews(articles) {

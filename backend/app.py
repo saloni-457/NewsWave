@@ -8,13 +8,24 @@ import traceback
 
 import os
 
-
-
 app = Flask(__name__)
 CORS(app)
-CORS(app, resources={r"/*": {"origins": "https://newswave-3.onrender.com"}})
+# CORS(app, resources={r"/*": {"origins": "https://newswave-3.onrender.com"}})
 
+# CORS(app, resources={r"/*": {"origins": ["https://newswave-3.onrender.com", "https://dailynews-on-newswave.netlify.app" ]}})
 
+CORS(app, resources={
+    r"/*": {
+        "origins": [
+            "http://127.0.0.1:5501",   # local frontend
+            "http://localhost:3000",   # if you use React dev server
+            "https://dailynews-on-newswave.netlify.app",  # Netlify frontend
+            "https://newswave-3.onrender.com"  # Render backend itself
+        ]
+    }
+})
+
+from flask_cors import CORS
 
 NEWS_API_KEY = os.getenv("NEWS_API_KEY")
 GEMINI_API_KEY = os.getenv("GEMINI_GOOGLE_API_KEY")
