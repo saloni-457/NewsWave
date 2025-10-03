@@ -1,9 +1,8 @@
 
 // =================== CONFIG ===================
-const BASE_URL =
-    window.location.hostname === "localhost"
-        ? "http://127.0.0.1:5000"                         // Local Flask server
-        : "https://newswave-3.onrender.com";              // Deployed backend
+
+const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
+const BASE_URL = isLocal ? "http://127.0.0.1:5000" : "https://newswave-3.onrender.com";
 
 const DEFAULT_CATEGORY = "general";
 
@@ -25,28 +24,53 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ========== Display News ==========
-    function displayNews(articles) {
-        newsContent.innerHTML = "";
-        if (!articles.length) {
-            newsContent.innerHTML = `<p class="error">No news found. Try again later.</p>`;
-            return;
-        }
+    // function displayNews(articles) {
+    //     newsContent.innerHTML = "";
+    //     if (!articles.length) {
+    //         newsContent.innerHTML = `<p class="error">No news found. Try again later.</p>`;
+    //         return;
+    //     }
 
-        articles.forEach(article => {
-            const articleElement = document.createElement("article");
-            articleElement.innerHTML = `
-                <div class="article-thumbnail">
-                    <img src="${article.urlToImage || 'images/logo.png'}" alt="${article.title}">
-                </div>
-                <div class="article-details">
-                    <h2>${article.title || "Untitled"}</h2>
-                    <p>${article.description || ""}</p>
-                    <a href="${article.url}" target="_blank">Read more</a>
-                </div>
-            `;
-            newsContent.appendChild(articleElement);
-        });
+    //     articles.forEach(article => {
+    //         const articleElement = document.createElement("article");
+    //         articleElement.innerHTML = `
+    //             <div class="article-thumbnail">
+    //                 <img src="${article.urlToImage || 'images/logo.png'}" alt="${article.title}">
+    //             </div>
+    //             <div class="article-details">
+    //                 <h2>${article.title || "Untitled"}</h2>
+    //                 <p>${article.description || ""}</p>
+    //                 <a href="${article.url}" target="_blank">Read more</a>
+    //             </div>
+    //         `;
+    //         newsContent.appendChild(articleElement);
+    //     });
+    // }
+
+    function displayNews(articles) {
+    newsContent.innerHTML = "";
+    if (!articles.length) {
+        newsContent.innerHTML = `<p class="error">No news found. Try again later.</p>`;
+        return;
     }
+
+    articles.forEach(article => {
+        const articleElement = document.createElement("article");
+        articleElement.innerHTML = `
+            <div class="article-thumbnail">
+                <img src="${article.urlToImage || 'images/logo.png'}" 
+                     alt="${article.title || "News Image"}"
+                     onerror="this.onerror=null; this.src='images/logo.png';">
+            </div>
+            <div class="article-details">
+                <h2>${article.title || "Untitled"}</h2>
+                <p>${article.description || ""}</p>
+                <a href="${article.url}" target="_blank">Read more</a>
+            </div>
+        `;
+        newsContent.appendChild(articleElement);
+    });
+}
 
     // Initial load
     fetchNews(DEFAULT_CATEGORY).then(displayNews);
