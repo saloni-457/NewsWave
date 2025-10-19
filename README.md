@@ -2,7 +2,7 @@
 
 <div align="center">
 
-# ✨🌊 **NEWSWAVE**
+# **NEWSWAVE**
 ### _Your AI-Powered Daily News Companion_
 
 <p align="center">
@@ -80,24 +80,31 @@ Stay informed, effortlessly — **anytime, anywhere**. 🌍🧠
 
 ## 🧠 **AI Summarization in Action**
 
+Below is a quick Python example demonstrating how NewsWave summarizes trending AI news using Gemini API:
+
 ```python
 from google import generativeai as genai
 
 model = genai.GenerativeModel("gemini-pro")
 response = model.generate_content("Summarize the latest AI trends.")
 print(response.text)
-⚡ Quick Start (Local Setup)
+
+---
+
+**⚡ Quick Start (Local Setup)**
 1️⃣ Clone the Repository
 bash
 Copy code
 git clone https://github.com/saloni-457/NewsWave.git
 cd NewsWave
+
 2️⃣ Set Up Backend (Flask)
 bash
 Copy code
 cd backend
 pip install -r requirements.txt
 python app.py
+
 3️⃣ Add Environment Variables
 Create a .env file inside /backend:
 
@@ -105,15 +112,20 @@ ini
 Copy code
 NEWS_API_KEY=your_newsapi_key_here
 GEMINI_GOOGLE_API_KEY=your_gemini_api_key_here
+
 4️⃣ Run the Frontend
 bash
 Copy code
 cd ../frontend
 open index.html
+
 💡 Or deploy directly to Netlify from your GitHub repo!
 
+
+---
+
+
 🌈 Future Enhancements
-🚀 Planned Upgrades:
 
 🔐 User Login & Personalization (Firebase)
 
@@ -123,7 +135,12 @@ open index.html
 
 📈 Admin Dashboard & Analytics
 
+
+---
+
+
 💡 Learning Highlights
+
 🧩 Integrated Flask + Gemini AI for real-time news summarization
 
 ⚡ Built RESTful API endpoints for scalable data handling
@@ -132,8 +149,12 @@ open index.html
 
 🪶 Deployed using Render (Backend) & Netlify (Frontend)
 
+
+ ```
+
+
 <div align="center">
 🌟 “Empowering readers with clarity and AI intelligence — that’s NewsWave.” 🌊
 Crafted with ❤️ by Saloni Gupta
 
-</div> ```
+</div>
