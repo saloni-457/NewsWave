@@ -49,43 +49,47 @@ Stay informed, effortlessly — anywhere, anytime. 🌍🧠
 
 ## 📱 **Responsive Design Showcase**
 
-### 🖥️ Desktop View
-<p align="center">
+| Desktop | Mobile |
+|----------|--------|
+| ![Desktop Screenshot](<p align="center">
   <img src="https://github.com/saloni-457/NewsWave/blob/main/desktop_newswave.png" alt="Desktop View" width="500px">
-</p>
-
-### 📱 Mobile View
-<p align="center">
+</p>) | ![Mobile Screenshot](<p align="center">
   <img src="https://github.com/saloni-457/NewsWave/blob/main/mobile_newswave.png" alt="Mobile View" width="350px">
-</p>
+</p>) |
 
-> 💡 The layout automatically adapts for tablets & smartphones for a smooth reading experience.
+> 💡 The layout automatically adapts for tablets & smartphones for smooth reading experience.
 
 ---
-
 
 
 ## 🧠 **AI Summarization in Action**
 
 python
+
 from google import generativeai as genai
 
 model = genai.GenerativeModel("gemini-pro")
+
 response = model.generate_content("Summarize the latest AI trends.")
+
 print(response.text)
 
+---
 
 **💫 Quick Start Guide (Local Setup)**
 
 1️⃣ Clone the Repository
 
 git clone https://github.com/saloni-457/NewsWave.git
+
 cd NewsWave
 
 2️⃣ Set Up Backend (Flask)
 
 cd backend
+
 pip install -r requirements.txt
+
 python app.py
 
 3️⃣ Configure Environment Variables
@@ -93,16 +97,20 @@ python app.py
 Create a .env file inside /backend:
 
 NEWS_API_KEY=your_newsapi_key_here
+
 GEMINI_GOOGLE_API_KEY=your_gemini_api_key_here
 
 4️⃣ Run the Frontend
 
 cd ../frontend
+
 open index.html
 
 
 Or deploy to Netlify directly from your GitHub repo 🌐
 
+
+---
 
 
 **🌈 Future Enhancements**
@@ -116,6 +124,9 @@ Or deploy to Netlify directly from your GitHub repo 🌐
 🗂️ Admin Dashboard with Analytics
 
 
+---
+
+
 **💡 Learning Highlights**
 
 🧩 Integrated Flask + AI (Gemini) for real-time text summarization
@@ -125,6 +136,7 @@ Or deploy to Netlify directly from your GitHub repo 🌐
 🎨 Developed a clean, responsive UI/UX using pure HTML + CSS
 
 🪶 Deployed on Render (Backend) & Netlify (Frontend) for CI/CD
+
 
 
 
