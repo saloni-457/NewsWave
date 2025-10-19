@@ -89,6 +89,7 @@ print(response.text)
 ---
 
 **⚡ Quick Start (Local Setup)**
+
 1️⃣ Clone the Repository
 
 git clone https://github.com/saloni-457/NewsWave.git
@@ -119,11 +120,8 @@ open index.html
 🌈 Future Enhancements
 
 🔐 User Login & Personalization (Firebase)
-
 📌 Save / Bookmark Articles
-
 🔊 Voice-based News Reader (TTS)
-
 📈 Admin Dashboard & Analytics
 
 ---
@@ -131,19 +129,15 @@ open index.html
 💡 Learning Highlights
 
 🧩 Integrated Flask + Gemini AI for real-time news summarization
-
 ⚡ Built RESTful API endpoints for scalable data handling
-
 🎨 Designed responsive UI/UX with pure HTML + CSS
-
 🪶 Deployed using Render (Backend) & Netlify (Frontend)
 
-
- ```
-
+```
 
 <div align="center">
 <p> 🌟 “Empowering readers with clarity and AI intelligence — that’s NewsWave.” 🌊 <p>
 <p> Crafted with ❤️ by Saloni Gupta </p>
 </div>
+
 
