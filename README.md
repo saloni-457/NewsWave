@@ -116,7 +116,8 @@ open index.html
 💡 Or deploy directly to Netlify from your GitHub repo!
 
 ```
----
+
+
 
 <div style="max-width:900px;margin:20px auto;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;">
   <hr style="border:0;border-top:1px solid #e6e6e6;margin:24px 0;">
@@ -127,39 +128,40 @@ open index.html
       <span style="font-weight:700">Future Enhancements</span>
     </h2>
 
-    <ul style="list-style:none;padding:0;margin:8px 0 0;display:grid;gap:8px;">
-      <li style="display:flex;align-items:flex-start;gap:12px;padding:8px 12px;border-radius:8px;background:#fafafa;">
-        <span style="font-size:1.15rem;margin-top:2px">🔐</span>
-        <div>
-          <strong>User Login & Personalization</strong>
-          <div style="color:#555;font-size:0.95rem;margin-top:4px;">Implement Firebase auth to enable user accounts, profiles, and personalized feeds.</div>
-        </div>
-      </li>
 
-      <li style="display:flex;align-items:flex-start;gap:12px;padding:8px 12px;border-radius:8px;background:#fafafa;">
-        <span style="font-size:1.15rem;margin-top:2px">📌</span>
-        <div>
-          <strong>Save / Bookmark Articles</strong>
-          <div style="color:#555;font-size:0.95rem;margin-top:4px;">Allow users to save favorites to view later — persisted per user.</div>
-        </div>
-      </li>
+<ul style="list-style:none;padding:0;margin:8px 0 0;display:grid;gap:8px;">
+  <li style="display:flex;align-items:flex-start;gap:12px;padding:8px 12px;border-radius:8px;background:#fafafa;">
+    <span style="font-size:1.15rem;margin-top:2px">🔐</span>
+    <div>
+      <strong>User Login & Personalization</strong>
+      <div style="color:#555;font-size:0.95rem;margin-top:4px;">Implement Firebase auth to enable user accounts, profiles, and personalized feeds.</div>
+    </div>
+  </li>
 
-      <li style="display:flex;align-items:flex-start;gap:12px;padding:8px 12px;border-radius:8px;background:#fafafa;">
-        <span style="font-size:1.15rem;margin-top:2px">🔊</span>
-        <div>
-          <strong>Voice-based News Reader (TTS)</strong>
-          <div style="color:#555;font-size:0.95rem;margin-top:4px;">Add text-to-speech so users can listen to articles on the go (accessible feature).</div>
-        </div>
-      </li>
+  <li style="display:flex;align-items:flex-start;gap:12px;padding:8px 12px;border-radius:8px;background:#fafafa;">
+    <span style="font-size:1.15rem;margin-top:2px">📌</span>
+    <div>
+      <strong>Save / Bookmark Articles</strong>
+      <div style="color:#555;font-size:0.95rem;margin-top:4px;">Allow users to save favorites to view later — persisted per user.</div>
+    </div>
+  </li>
 
-      <li style="display:flex;align-items:flex-start;gap:12px;padding:8px 12px;border-radius:8px;background:#fafafa;">
-        <span style="font-size:1.15rem;margin-top:2px">📈</span>
-        <div>
-          <strong>Admin Dashboard & Analytics</strong>
-          <div style="color:#555;font-size:0.95rem;margin-top:4px;">Admin panel to view usage metrics, trending topics, and manage content.</div>
-        </div>
-      </li>
-    </ul>
+  <li style="display:flex;align-items:flex-start;gap:12px;padding:8px 12px;border-radius:8px;background:#fafafa;">
+    <span style="font-size:1.15rem;margin-top:2px">🔊</span>
+    <div>
+      <strong>Voice-based News Reader (TTS)</strong>
+      <div style="color:#555;font-size:0.95rem;margin-top:4px;">Add text-to-speech so users can listen to articles on the go (accessible feature).</div>
+    </div>
+  </li>
+
+  <li style="display:flex;align-items:flex-start;gap:12px;padding:8px 12px;border-radius:8px;background:#fafafa;">
+    <span style="font-size:1.15rem;margin-top:2px">📈</span>
+    <div>
+      <strong>Admin Dashboard & Analytics</strong>
+      <div style="color:#555;font-size:0.95rem;margin-top:4px;">Admin panel to view usage metrics, trending topics, and manage content.</div>
+    </div>
+  </li>
+</ul>
   </section>
 
   <hr style="border:0;border-top:1px solid #e6e6e6;margin:18px 0;">
@@ -170,7 +172,7 @@ open index.html
       <span style="font-weight:700">Learning Highlights</span>
     </h2>
 
-    <ul style="margin:8px 0 0;padding-left:18px;color:#222;line-height:1.6;">
+  <ul style="margin:8px 0 0;padding-left:18px;color:#222;line-height:1.6;">
       <li>🧩 <strong>Integrated Flask + Gemini AI</strong> for real-time news summarization</li>
       <li>⚡ <strong>Built RESTful API</strong> endpoints for scalable data handling</li>
       <li>🎨 <strong>Designed responsive UI/UX</strong> using pure HTML & CSS</li>
@@ -184,6 +186,7 @@ open index.html
 <p> 🌟 “Empowering readers with clarity and AI intelligence — that’s NewsWave.” 🌊 <p>
 <p> Crafted with ❤️ by Saloni Gupta </p>
 </div>
+
 
 
 
