@@ -13,9 +13,14 @@
 
 ### 📰 **Stay Updated | Stay Smart | Stay Ahead**
 
+
 <p align="center">
-  <img src="https://img.shields.io/badge/Frontend%20Live%20🟢-Netlify-blue?style=for-the-badge&logo=netlify">
-  <img src="https://img.shields.io/badge/Backend%20Live%20🟣-Render-purple?style=for-the-badge&logo=render">
+  <a href="https://dailynews-on-newswave.netlify.app">
+    <img src="https://img.shields.io/badge/Frontend%20Live%20🟢-Netlify-blue?style=for-the-badge&logo=netlify">
+  </a>
+  <a href="https://newswave-3.onrender.com">
+    <img src="https://img.shields.io/badge/Backend%20Live%20🟣-Render-purple?style=for-the-badge&logo=render">
+  </a>
   <img src="https://img.shields.io/badge/Made%20With-Python%20%7C%20Flask-blue?style=for-the-badge&logo=python">
   <img src="https://img.shields.io/badge/Powered%20By-Google%20Gemini%20AI-orange?style=for-the-badge&logo=google">
 </p>
@@ -86,7 +91,6 @@ model = genai.GenerativeModel("gemini-pro")
 response = model.generate_content("Summarize the latest AI trends.")
 print(response.text)
 
----
 
 **⚡ Quick Start (Local Setup)**
 
@@ -192,5 +196,6 @@ open index.html
 <p> 🌟 “Empowering readers with clarity and AI intelligence — that’s NewsWave.” 🌊 <p>
 <p> Crafted with ❤️ by Saloni Gupta </p>
 </div>
+
 
 
