@@ -11,7 +11,7 @@
 
 ---
 
-### 📰 **Stay Updated | Stay Smart | Stay Ahead**
+###  **Stay Updated | Stay Smart | Stay Ahead**
 
 
 <p align="center">
@@ -30,7 +30,7 @@
 
 </div>
 
-## 💫 **Overview**
+##  **Overview**
 
 **NewsWave** delivers **real-time global news** with **AI-powered summaries**.  
 Using **Google Gemini AI** + **NewsAPI**, it transforms long news articles into quick, insightful bites.  
@@ -54,7 +54,7 @@ Stay informed, effortlessly — **anytime, anywhere**. 🌍🧠
 
 ---
 
-## ✨ **Key Features**
+##  **Key Features**
 
 - 📰 Real-time, trending news powered by **NewsAPI**
 - 🤖 **AI Summarization** using **Google Gemini**
@@ -64,7 +64,7 @@ Stay informed, effortlessly — **anytime, anywhere**. 🌍🧠
 
 ---
 
-## 📱 **Responsive Design Showcase**
+##  **Responsive Design Showcase**
 
 ### 🖥️ Desktop View
 <p align="center">
@@ -80,7 +80,7 @@ Stay informed, effortlessly — **anytime, anywhere**. 🌍🧠
 
 ---
 
-## 🧠 **AI Summarization in Action**
+##  **AI Summarization in Action**
 
 Below is a quick Python example demonstrating how NewsWave summarizes trending AI news using Gemini API:
 
@@ -127,7 +127,7 @@ open index.html
   
   <section aria-labelledby="future-enhancements" style="margin-bottom:20px;">
     <h2 id="future-enhancements" style="display:flex;align-items:center;gap:10px;font-size:1.25rem;margin:0 0 12px;">
-      <span style="font-size:1.35rem">🌈</span>
+      <span style="font-size:1.35rem"></span>
       <span style="font-weight:700">Future Enhancements</span>
     </h2>
 
@@ -175,7 +175,7 @@ open index.html
 
   <section aria-labelledby="learning-highlights">
     <h2 id="learning-highlights" style="display:flex;align-items:center;gap:10px;font-size:1.25rem;margin:0 0 12px;">
-      <span style="font-size:1.35rem">💡</span>
+      <span style="font-size:1.35rem"></span>
       <span style="font-weight:700">Learning Highlights</span>
     </h2>
 
@@ -196,6 +196,7 @@ open index.html
 <p> 🌟 “Empowering readers with clarity and AI intelligence — that’s NewsWave.” 🌊 <p>
 <p> Crafted with ❤️ by Saloni Gupta </p>
 </div>
+
 
 
 
