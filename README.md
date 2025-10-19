@@ -1,23 +1,38 @@
+<!-- 🌊 NEWSWAVE - Modern README Design -->
+
 <div align="center">
-  
-# 🌊 **NewsWave**
+
+# ✨🌊 **NEWSWAVE**
 ### _Your AI-Powered Daily News Companion_
-  
+
 <p align="center">
-  <img src="https://github.com/saloni-457/NewsWave/blob/main/logo.png" alt="NewsWave Logo" width="180px">
+  <img src="https://github.com/saloni-457/NewsWave/blob/main/logo.png" alt="NewsWave Logo" width="150px">
 </p>
-
-[![Netlify](https://img.shields.io/badge/Frontend%20Live%20🟢-Netlify-blue?style=for-the-badge)](https://dailynews-on-newswave.netlify.app)
-[![Render](https://img.shields.io/badge/Backend%20Live%20🟣-Render-purple?style=for-the-badge)](https://newswave-3.onrender.com)
-
-</div>
 
 ---
 
+### 📰 **Stay Updated | Stay Smart | Stay Ahead**
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Frontend%20Live%20🟢-Netlify-blue?style=for-the-badge&logo=netlify">
+  <img src="https://img.shields.io/badge/Backend%20Live%20🟣-Render-purple?style=for-the-badge&logo=render">
+  <img src="https://img.shields.io/badge/Made%20With-Python%20%7C%20Flask-blue?style=for-the-badge&logo=python">
+  <img src="https://img.shields.io/badge/Powered%20By-Google%20Gemini%20AI-orange?style=for-the-badge&logo=google">
+</p>
+
+<a href="https://dailynews-on-newswave.netlify.app"><strong>🌐 Live Demo</strong></a> • 
+<a href="https://newswave-3.onrender.com"><strong>⚙️ Backend API</strong></a> • 
+<a href="https://github.com/saloni-457/NewsWave"><strong>📁 GitHub Repo</strong></a>
+
+---
+
+</div>
+
 ## 💫 **Overview**
 
-**NewsWave** brings you real-time global news from **NewsAPI**, beautifully summarized by **Google Gemini AI** for quick, insightful reading.  
-Stay informed, effortlessly — anywhere, anytime. 🌍🧠
+**NewsWave** delivers **real-time global news** with **AI-powered summaries**.  
+Using **Google Gemini AI** + **NewsAPI**, it transforms long news articles into quick, insightful bites.  
+Stay informed, effortlessly — **anytime, anywhere**. 🌍🧠
 
 ---
 
@@ -31,7 +46,7 @@ Stay informed, effortlessly — anywhere, anytime. 🌍🧠
 | 📰 **API Source** | NewsAPI.org |
 | 🔥 **Backend** | Flask (Python) |
 | ☁️ **Hosting** | Netlify + Render |
-| 🧰 **Tools** | dotenv, requests, Flask-CORS |
+| 🧰 **Utilities** | dotenv, requests, Flask-CORS |
 
 </div>
 
@@ -39,81 +54,66 @@ Stay informed, effortlessly — anywhere, anytime. 🌍🧠
 
 ## ✨ **Key Features**
 
-✅ Fetches **real-time, trending news** using NewsAPI  
-✅ **AI Summarization** of articles using Google Gemini  
-✅ Category-wise headlines (e.g. *Business, Sports, Tech, Health*)  
-✅ Fully **responsive** for mobile, tablet, and desktop  
-✅ Beautiful **modern UI** inspired by premium news apps  
+- 📰 Real-time, trending news powered by **NewsAPI**
+- 🤖 **AI Summarization** using **Google Gemini**
+- 🗂️ Browse by categories (*Business, Sports, Tech, Health, etc.*)
+- 📱 Fully **responsive** across all devices
+- 🎨 Elegant, minimal **UI/UX** inspired by premium news apps
 
 ---
 
 ## 📱 **Responsive Design Showcase**
 
-| Desktop | Mobile |
-|----------|--------|
-| ![Desktop Screenshot](<p align="center">
-  <img src="https://github.com/saloni-457/NewsWave/blob/main/desktop_newswave.png" alt="Desktop View" width="500px">
-</p>) | ![Mobile Screenshot](<p align="center">
-  <img src="https://github.com/saloni-457/NewsWave/blob/main/mobile_newswave.png" alt="Mobile View" width="350px">
-</p>) |
+### 🖥️ Desktop View
+<p align="center">
+  <img src="https://github.com/saloni-457/NewsWave/blob/main/desktop_newswave.png" alt="Desktop View" width="650px">
+</p>
 
-> 💡 The layout automatically adapts for tablets & smartphones for smooth reading experience.
+### 📲 Mobile View
+<p align="center">
+  <img src="https://github.com/saloni-457/NewsWave/blob/main/mobile_newswave.png" alt="Mobile View" width="250px">
+</p>
+
+> 💡 The layout automatically adapts to phones & tablets for smooth reading.
 
 ---
-
 
 ## 🧠 **AI Summarization in Action**
 
-python
-
+```python
 from google import generativeai as genai
 
 model = genai.GenerativeModel("gemini-pro")
-
 response = model.generate_content("Summarize the latest AI trends.")
-
 print(response.text)
-
----
-
-**💫 Quick Start Guide (Local Setup)**
-
+⚡ Quick Start (Local Setup)
 1️⃣ Clone the Repository
-
+bash
+Copy code
 git clone https://github.com/saloni-457/NewsWave.git
-
 cd NewsWave
-
 2️⃣ Set Up Backend (Flask)
-
+bash
+Copy code
 cd backend
-
 pip install -r requirements.txt
-
 python app.py
-
-3️⃣ Configure Environment Variables
-
+3️⃣ Add Environment Variables
 Create a .env file inside /backend:
 
+ini
+Copy code
 NEWS_API_KEY=your_newsapi_key_here
-
 GEMINI_GOOGLE_API_KEY=your_gemini_api_key_here
-
 4️⃣ Run the Frontend
-
+bash
+Copy code
 cd ../frontend
-
 open index.html
+💡 Or deploy directly to Netlify from your GitHub repo!
 
-
-Or deploy to Netlify directly from your GitHub repo 🌐
-
-
----
-
-
-**🌈 Future Enhancements**
+🌈 Future Enhancements
+🚀 Planned Upgrades:
 
 🔐 User Login & Personalization (Firebase)
 
@@ -121,22 +121,19 @@ Or deploy to Netlify directly from your GitHub repo 🌐
 
 🔊 Voice-based News Reader (TTS)
 
-🗂️ Admin Dashboard with Analytics
+📈 Admin Dashboard & Analytics
 
+💡 Learning Highlights
+🧩 Integrated Flask + Gemini AI for real-time news summarization
 
----
+⚡ Built RESTful API endpoints for scalable data handling
 
+🎨 Designed responsive UI/UX with pure HTML + CSS
 
-**💡 Learning Highlights**
+🪶 Deployed using Render (Backend) & Netlify (Frontend)
 
-🧩 Integrated Flask + AI (Gemini) for real-time text summarization
+<div align="center">
+🌟 “Empowering readers with clarity and AI intelligence — that’s NewsWave.” 🌊
+Crafted with ❤️ by Saloni Gupta
 
-⚡ Designed RESTful API endpoints for scalable architecture
-
-🎨 Developed a clean, responsive UI/UX using pure HTML + CSS
-
-🪶 Deployed on Render (Backend) & Netlify (Frontend) for CI/CD
-
-
-
-
+</div> ```
