@@ -49,7 +49,7 @@ Stay informed, effortlessly — anywhere, anytime. 🌍🧠
 
 | Desktop | Mobile |
 |----------|--------|
-| ![Desktop Screenshot]() | ![Mobile Screenshot]() |
+| ![Desktop Screenshot](desktop.png) | ![Mobile Screenshot]() |
 
 > 💡 The layout automatically adapts for tablets & smartphones for smooth reading experience.
 
@@ -104,3 +104,4 @@ Admin Dashboard with Analytics
 ⚡ Designed RESTful API endpoints for scalable architecture
 🎨 Developed a clean, responsive UI/UX using pure HTML + CSS
 🪶 Deployed on Render (Backend) & Netlify (Frontend) for CI/CD
+
