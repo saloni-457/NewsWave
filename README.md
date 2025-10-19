@@ -47,9 +47,16 @@ Stay informed, effortlessly — anywhere, anytime. 🌍🧠
 
 ## 📱 **Responsive Design Showcase**
 
-| Desktop | Mobile |
-|----------|--------|
-| ![Desktop Screenshot](desktop.png) | ![Mobile Screenshot]() |
+### 🖥️ Desktop View
+<p align="center">
+  <img src="https://github.com/saloni-457/NewsWave/blob/main/desktop.png" alt="Desktop View" width="800px">
+</p>
+
+### 📱 Mobile View
+<p align="center">
+  <img src="https://github.com/saloni-457/NewsWave/blob/main/mobile.png" alt="Mobile View" width="350px">
+</p>
+
 
 > 💡 The layout automatically adapts for tablets & smartphones for smooth reading experience.
 
@@ -104,4 +111,5 @@ Admin Dashboard with Analytics
 ⚡ Designed RESTful API endpoints for scalable architecture
 🎨 Developed a clean, responsive UI/UX using pure HTML + CSS
 🪶 Deployed on Render (Backend) & Netlify (Frontend) for CI/CD
+
 
