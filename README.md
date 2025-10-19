@@ -20,9 +20,6 @@
   <img src="https://img.shields.io/badge/Powered%20By-Google%20Gemini%20AI-orange?style=for-the-badge&logo=google">
 </p>
 
-<a href="https://dailynews-on-newswave.netlify.app"><strong>🌐 Live Demo</strong></a> • 
-<a href="https://newswave-3.onrender.com"><strong>⚙️ Backend API</strong></a> • 
-<a href="https://github.com/saloni-457/NewsWave"><strong>📁 GitHub Repo</strong></a>
 
 ---
 
@@ -93,37 +90,31 @@ print(response.text)
 
 **⚡ Quick Start (Local Setup)**
 1️⃣ Clone the Repository
-bash
-Copy code
+
 git clone https://github.com/saloni-457/NewsWave.git
 cd NewsWave
 
 2️⃣ Set Up Backend (Flask)
-bash
-Copy code
+
 cd backend
 pip install -r requirements.txt
 python app.py
 
 3️⃣ Add Environment Variables
+
 Create a .env file inside /backend:
 
-ini
-Copy code
 NEWS_API_KEY=your_newsapi_key_here
 GEMINI_GOOGLE_API_KEY=your_gemini_api_key_here
 
 4️⃣ Run the Frontend
-bash
-Copy code
+
 cd ../frontend
 open index.html
 
 💡 Or deploy directly to Netlify from your GitHub repo!
 
-
 ---
-
 
 🌈 Future Enhancements
 
@@ -135,9 +126,7 @@ open index.html
 
 📈 Admin Dashboard & Analytics
 
-
 ---
-
 
 💡 Learning Highlights
 
@@ -154,7 +143,7 @@ open index.html
 
 
 <div align="center">
-🌟 “Empowering readers with clarity and AI intelligence — that’s NewsWave.” 🌊
-Crafted with ❤️ by Saloni Gupta
-
+<p> 🌟 “Empowering readers with clarity and AI intelligence — that’s NewsWave.” 🌊 <p>
+<p> Crafted with ❤️ by Saloni Gupta </p>
 </div>
+
