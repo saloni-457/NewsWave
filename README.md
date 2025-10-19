@@ -49,12 +49,12 @@ Stay informed, effortlessly — anywhere, anytime. 🌍🧠
 
 ### 🖥️ Desktop View
 <p align="center">
-  <img src="https://github.com/saloni-457/NewsWave/blob/main/desktop.png" alt="Desktop View" width="800px">
+  <img src="https://github.com/saloni-457/NewsWave/blob/main/desktop_newswave.png" alt="Desktop View" width="500px">
 </p>
 
 ### 📱 Mobile View
 <p align="center">
-  <img src="https://github.com/saloni-457/NewsWave/blob/main/mobile.png" alt="Mobile View" width="350px">
+  <img src="https://github.com/saloni-457/NewsWave/blob/main/mobile_newswave.png" alt="Mobile View" width="350px">
 </p>
 
 
@@ -111,5 +111,6 @@ Admin Dashboard with Analytics
 ⚡ Designed RESTful API endpoints for scalable architecture
 🎨 Developed a clean, responsive UI/UX using pure HTML + CSS
 🪶 Deployed on Render (Backend) & Netlify (Frontend) for CI/CD
+
 
 
